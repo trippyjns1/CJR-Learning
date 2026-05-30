@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJR Learning — Apoyo Académico</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning">
+                </a>
+            </div>
+
+
+            <nav class="header-nav" id="mainNav">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="ing_por.html">Inglés/Portugués</a>
+                <a href="spss.html">SPSS</a>
+                <a href="computo.html">Cómputo</a>
+                <a href="index.html#contacto" class="nav-btn-contacto">Contacto →</a>
+            </nav>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="menuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-inner">
+
+                <!-- Columna izquierda - texto -->
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                        Apoyo académico desde la pandemia
+                    </div>
+
+                    <h1>
+                        Soluciones Académicas<br>
+                        <span class="hero-highlight">Rápidas y Confiables</span>
+                    </h1>
+
+                    <p class="hero-desc">
+                        Apoyamos a estudiantes de diferentes niveles y carreras con tareas, trabajos e investigaciones.
+                        Entregas puntuales, comunicación constante y compromiso con cada proyecto.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#servicios" class="btn-primary">
+                            Explorar Servicios
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="hero-pills">
+                        <div class="hero-pill">
+                            <div class="hero-pill-icon">
+                                <!-- ícono reloj -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="pill-title">Entregas Puntuales</p>
+                                <p class="pill-sub">Cumplimos con tus tiempos.</p>
+                            </div>
+                        </div>
+                        <div class="hero-pill">
+                            <div class="hero-pill-icon">
+                                <!-- ícono chat -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="pill-title">Comunicación Constante</p>
+                                <p class="pill-sub">Siempre informado de tu progreso.</p>
+                            </div>
+                        </div>
+                        <div class="hero-pill">
+                            <div class="hero-pill-icon">
+                                <!-- ícono escudo -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="pill-title">Confianza y Compromiso</p>
+                                <p class="pill-sub">Calidad garantizada en cada trabajo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna derecha - imagenes -->
+                <div class="hero-media">
+
+                    <!-- Foto principal -->
+                    <div class="hero-img-main">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80"
+                            alt="Estudiantes trabajando juntos">
+                        <div class="hero-img-label">Trabajo en equipo</div>
+                    </div>
+
+                    <!-- Tarjetas pequeñas -->
+                    <div class="hero-cards">
+
+                        <div class="hero-card hero-card--dark">
+                            <div class="hero-card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 3v18h18" />
+                                    <path d="m19 9-5 5-4-4-3 3" />
+                                </svg>
+                            </div>
+                            <p class="hero-card-title">Análisis SPSS</p>
+                            <p class="hero-card-sub">Estadística para tesis</p>
+                        </div>
+
+                        <div class="hero-card hero-card--light">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=300&q=80"
+                                alt="Materiales de estudio">
+                            <div class="hero-img-label">Investigación</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Nosotros -->
+        <section class="nosotros section" id="nosotros">
+            <div class="container nosotros-inner">
+
+                <!-- Imagen -->
+                <div class="nosotros-media">
+                    <div class="nosotros-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
+                            alt="Equipo CJR Learning trabajando">
+                        <div class="nosotros-badge-float">
+                            <span class="nosotros-badge-num">+5</span>
+                            <span class="nosotros-badge-text">años apoyando<br>estudiantes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texto -->
+                <div class="nosotros-text">
+                    <div class="hero-badge" style="margin-bottom:16px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        Nuestra historia
+                    </div>
+
+                    <h2 class="section-title" style="text-align:left; margin-bottom:16px;">
+                        Nacimos para ayudar<br>a otros estudiantes
+                    </h2>
+
+                    <p class="nosotros-p">
+                        <strong>CJR Learning</strong> nació durante la pandemia como una iniciativa de un
+                        estudiante
+                        que buscaba ayudar a sus compañeros con tareas y trabajos virtuales. Lo que comenzó como un
+                        apoyo
+                        entre amigos fue creciendo gracias a la confianza y responsabilidad en cada proyecto realizado.
+                    </p>
+                    <p class="nosotros-p">
+                        Actualmente brindamos apoyo académico y digital a estudiantes de diferentes niveles y carreras,
+                        ofreciendo soluciones rápidas, organizadas y comprometidas con la calidad y puntualidad.
+                    </p>
+
+                    <div class="nosotros-stats">
+                        <div class="nosotros-stat">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Entregas puntuales</span>
+                        </div>
+                        <div class="nosotros-stat">
+                            <span class="stat-num">+5000</span>
+                            <span class="stat-label">Trabajos completados</span>
+                        </div>
+                        <div class="nosotros-stat">
+                            <span class="stat-num">24h</span>
+                            <span class="stat-label">Atención disponible</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Por que elegirnos -->
+        <section class="porque section" id="porque">
+            <div class="container">
+                <h2 class="section-title">¿Por qué elegirnos?</h2>
+                <p class="section-subtitle">Estas son las razones por las que cientos de estudiantes confían en
+                    nosotros.</p>
+
+                <div class="porque-grid">
+
+                    <div class="porque-card">
+                        <div class="porque-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                            </svg>
+                        </div>
+                        <h3>Atención rápida y personalizada</h3>
+                        <p>Respondemos de inmediato y nos adaptamos a las necesidades específicas de cada estudiante.
+                        </p>
+                    </div>
+
+                    <div class="porque-card">
+                        <div class="porque-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </div>
+                        <h3>Compromiso con cada trabajo</h3>
+                        <p>Cada proyecto lo tratamos con dedicación y responsabilidad, como si fuera nuestro propio
+                            trabajo.</p>
+                    </div>
+
+                    <div class="porque-card">
+                        <div class="porque-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <h3>Entregas puntuales y organizadas</h3>
+                        <p>Respetamos los plazos al máximo. Organizamos cada entrega para que llegue a tiempo sin
+                            contratiempos.</p>
+                    </div>
+
+                    <div class="porque-card">
+                        <div class="porque-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                            </svg>
+                        </div>
+                        <h3>Apoyo para diferentes cursos</h3>
+                        <p>Trabajamos con múltiples áreas: estadística, idiomas, cómputo, investigación y más.</p>
+                    </div>
+
+                    <div class="porque-card">
+                        <div class="porque-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </div>
+                        <h3>Comunicación constante</h3>
+                        <p>Te mantenemos informado en cada etapa del trabajo. Siempre disponibles por WhatsApp.</p>
+                    </div>
+
+                    <div class="porque-card">
+                        <div class="porque-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                <path d="M2 17l10 5 10-5" />
+                                <path d="M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <h3>Experiencia desde la pandemia</h3>
+                        <p>Años de experiencia acompañando a estudiantes en entornos virtuales y presenciales.</p>
+                    </div>
+
+                    <div class="porque-card porque-card--highlight">
+                        <div class="porque-icon porque-icon--white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <h3>Calidad y responsabilidad</h3>
+                        <p>Cada entrega refleja nuestro estándar de calidad. La responsabilidad es nuestra principal
+                            carta de presentación.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section class="servicios section" id="servicios">
+            <div class="container">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Apoyamos en todas las áreas académicas que necesitas para avanzar en tu
+                    carrera.</p>
+
+                <div class="servicios-grid">
+
+                    <a href="ing_por.html" class="servicio-card">
+                        <div class="servicio-img">
+                            <img src="assets/images/logos/ELLS_2.png" alt="Inglés y Portugués">
+                            <div class="servicio-tag">Idiomas</div>
+                        </div>
+                        <div class="servicio-body">
+                            <div class="servicio-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="2" y1="12" x2="22" y2="12" />
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                </svg>
+                            </div>
+                            <h3>Inglés / Portugués</h3>
+                            <p>Apoyo en plataformas como ELLS y Pearson. Gramática, comprensión lectora, listening y
+                                evaluaciones virtuales.</p>
+                            <span class="servicio-link">Ver servicio →</span>
+                        </div>
+                    </a>
+
+                    <a href="spss.html" class="servicio-card">
+                        <div class="servicio-img">
+                            <img src="assets/images/logos/SPSS.png" alt="SPSS Estadística">
+                            <div class="servicio-tag">Estadística</div>
+                        </div>
+                        <div class="servicio-body">
+                            <div class="servicio-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 3v18h18" />
+                                    <path d="m19 9-5 5-4-4-3 3" />
+                                </svg>
+                            </div>
+                            <h3>SPSS y Estadística</h3>
+                            <p>Análisis de datos con SPSS, Jamovi, AMOS y PSPP. Tesis, proyectos de investigación y
+                                pruebas estadísticas.</p>
+                            <span class="servicio-link">Ver servicio →</span>
+                        </div>
+                    </a>
+
+                    <a href="computo.html" class="servicio-card">
+                        <div class="servicio-img">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=500&q=80"
+                                alt="Cómputo">
+                            <div class="servicio-tag">Tecnología</div>
+                        </div>
+                        <div class="servicio-body">
+                            <div class="servicio-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                                    <line x1="8" y1="21" x2="16" y2="21" />
+                                    <line x1="12" y1="17" x2="12" y2="21" />
+                                </svg>
+                            </div>
+                            <h3>Cómputo</h3>
+                            <p>Word, Excel, AutoCAD, Python, Power BI, Inventor, Bizagi, ArcGIS y Cisco Networking
+                                Academy.</p>
+                            <span class="servicio-link">Ver servicio →</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="testimonios section" id="testimonios">
+            <div class="container">
+                <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
+                <p class="section-subtitle">Cientos de estudiantes ya confiaron en nosotros. Aquí algunas de sus
+                    experiencias.</p>
+
+                <div class="testimonios-grid">
+
+                    <div class="testimonio-card">
+                        <div class="testimonio-stars">★★★★★</div>
+                        <p class="testimonio-texto">
+                            "Me ayudaron con mi trabajo de investigación en tiempo récord. Muy buena comunicación
+                            durante todo el proceso y la entrega fue antes del plazo. ¡100% recomendado!"
+                        </p>
+                        <div class="testimonio-autor">
+                            <!-- TODO: Reemplazar con foto real -->
+                            <div class="testimonio-avatar"
+                                style="background: rgba(79,70,229,0.15); color: var(--color-primary);">KR</div>
+                            <div>
+                                <p class="autor-nombre">Karla Ríos</p>
+                                <p class="autor-carrera">Estudiante de Psicología — USMP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonio-card testimonio-card--featured">
+                        <div class="testimonio-stars">★★★★★</div>
+                        <p class="testimonio-texto">
+                            "Necesitaba apoyo urgente con SPSS para mi tesis y lo resolvieron en pocas horas. Explicaron
+                            cada paso con claridad. Sin duda los volvería a contactar."
+                        </p>
+                        <div class="testimonio-autor">
+                            <!-- TODO: Reemplazar con foto real -->
+                            <div class="testimonio-avatar" style="background: rgba(255,255,255,0.2); color: #fff;">AM
+                            </div>
+                            <div>
+                                <p class="autor-nombre">Andrés Mendoza</p>
+                                <p class="autor-carrera">Estudiante de Administración — UPC</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonio-card">
+                        <div class="testimonio-stars">★★★★★</div>
+                        <p class="testimonio-texto">
+                            "Me apoyaron con los cursos de inglés en la plataforma ELLS. Muy atentos y organizados.
+                            Desde que los conocí no busco apoyo en otro lugar."
+                        </p>
+                        <div class="testimonio-autor">
+                            <!-- TODO: Reemplazar con foto real -->
+                            <div class="testimonio-avatar"
+                                style="background: rgba(79,70,229,0.15); color: var(--color-primary);">LV</div>
+                            <div>
+                                <p class="autor-nombre">Lucía Vargas</p>
+                                <p class="autor-carrera">Estudiante de Negocios Internacionales — UPN</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="contacto-section" id="contacto">
+            <div class="container">
+                <div class="contacto-card">
+
+                    <div class="contacto-badge">Estamos para ayudarte</div>
+                    <h2 class="contacto-title">Contacto <span>Directo</span></h2>
+                    <p class="contacto-desc">Atención personalizada para todos tus requerimientos académicos.</p>
+
+                    <div class="contacto-grid">
+
+                        <div class="contacto-item">
+                            <div class="contacto-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                            </div>
+                            <span class="contacto-label">WhatsApp</span>
+                            <p class="contacto-value">+51 920 478 858</p>
+                            <span class="contacto-sub">Respuesta inmediata</span>
+                            <a href="https://wa.me/51920478858" target="_blank"
+                                class="contacto-btn contacto-btn--green">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                </svg>
+                                Escribir por WhatsApp
+                            </a>
+                        </div>
+
+                        <div class="contacto-item">
+                            <div class="contacto-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <span class="contacto-label">Horario de Atención</span>
+                            <p class="contacto-value">24 horas</p>
+                            <span class="contacto-sub">Todos los días</span>
+                            <!-- <a href="https://wa.me/51920478858" target="_blank"
+                                class="contacto-btn contacto-btn--purple">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                                Siempre disponibles 
+                            </a> -->
+                        </div>
+
+
+                        <div class="contacto-item">
+                            <div class="contacto-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </div>
+                            <span class="contacto-label">Correo Electrónico</span>
+                            <p class="contacto-value">contacto@cjrlearning.com</p>
+                            <span class="contacto-sub">Escríbenos cuando quieras</span>
+                            <a href="mailto:contacto@cjrlearning.com" class="contacto-btn contacto-btn--blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                                Enviar Email
+                            </a>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="contacto-bottom">
+                        <div class="contacto-bottom-left">
+                            <div class="contacto-icon-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                                    <path
+                                        d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="contacto-bottom-title">¿Tienes alguna consulta?</p>
+                                <p class="contacto-bottom-sub">Nuestro equipo está listo para ayudarte.</p>
+                            </div>
+                        </div>
+                        <p class="contacto-bottom-cta">¡Contáctanos por el medio que prefieras!</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--  FOOTER  -->
+    <footer>
+        <div class="footer-bar">
+            <div class="footer-bar-inner">
+
+                <!-- Marca -->
+                <div class="footer-brand-col">
+                    <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning ">
+                    <span class="footer-brand">CJR Learning</span>
+                    <p class="footer-brand-desc">Apoyo académico profesional para estudiantes de todos los niveles. Rápidos,
+                        organizados y comprometidos.</p>
+                </div>
+
+                <!-- Navegación -->
+                <div class="footer-nav-col">
+                    <h4>Navegación</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Inicio</a>
+                        <a href="ing_por.html">Inglés/Portugués</a>
+                        <a href="spss.html">SPSS</a>
+                        <a href="computo.html">Cómputo</a>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="footer-services-col">
+                    <h4>Servicios</h4>
+                    <div class="footer-links">
+                        <a href="spss.html">Análisis SPSS</a>
+                        <a href="spss.html">Tesis e Investigación</a>
+                        <a href="ing_por.html">Inglés y Portugués</a>
+                        <a href="computo.html">Cómputo Avanzado</a>
+                        <a href="computo.html">Cisco Networking</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2026 <span>CJR Learning</span>. Todos los derechos reservados.</span>
+                <span class="footer-copy">Hecho para estudiantes peruanos</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/index.js"></script>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mainNav = document.getElementById('mainNav');
+        if (menuBtn) menuBtn.addEventListener('click', () => mainNav.classList.toggle('open'));
+    </script>
+
+</body>
+
+</html>
