@@ -76,3 +76,8 @@
     init();
   }
 })();
+
+
+const menuBtn = document.getElementById('menuBtn');
+const mainNav = document.getElementById('mainNav');
+if (menuBtn) menuBtn.addEventListener('click', () => mainNav.classList.toggle('open'));

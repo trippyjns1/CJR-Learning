@@ -30,7 +30,7 @@
   --cp-python-text: #1e5fa3;
 }
 
-/* ── BASE ── */
+/*  BASE  */
 *,
 *::before,
 *::after {
@@ -51,7 +51,7 @@ body {
   line-height: 1;
 }
 
-/* ── SECCIÓN ── */
+/*  SECCIÓN  */
 .cp-section {
   padding: 72px 24px 80px;
   background: var(--cp-bg);
@@ -249,7 +249,7 @@ body {
   gap: 16px;
 }
 
-/* ── CÍRCULO GRANDE DEL LOGO ── */
+/*  CÍRCULO GRANDE DEL LOGO  */
 .cp-logo-wrap {
   width: 90px;
   height: 90px;
@@ -620,7 +620,7 @@ body {
   }
 }
 
-/* ── Columna izquierda ── */
+/*  Columna izquierda  */
 .cp-desc-left {
   flex: 1.1;
   padding: 36px 36px;
@@ -721,7 +721,7 @@ body {
   padding-top: 5px;
 }
 
-/* ── Divisor vertical ── */
+/*  Divisor vertical  */
 .cp-desc-divider {
   background: var(--cp-border);
   height: 1px;
@@ -736,7 +736,7 @@ body {
   }
 }
 
-/* ── Columna derecha ── */
+/*  Columna derecha  */
 .cp-desc-right {
   flex: 1;
   padding: 36px 32px 0 32px;
@@ -860,7 +860,7 @@ body {
   border-color: rgba(14, 116, 144, 0.2);
 }
 
-/* ── Laptop decorativo esquina inferior derecha ── */
+/*  Laptop decorativo esquina inferior derecha  */
 .cp-desc-laptop {
   position: absolute;
   bottom: -4px;
@@ -1031,7 +1031,7 @@ body {
   background: var(--cp-inventor-bg);
 }
 
-/* ── Items de lista con título + texto ── */
+/*  Items de lista con título + texto  */
 .cp-desc-item-content {
   display: flex;
   flex-direction: column;
@@ -1053,7 +1053,7 @@ body {
   padding-top: 0;
 }
 
-/* ── Frase destacada (caja azul) ── */
+/*  Frase destacada (caja azul)  */
 .cp-desc-highlight {
   display: flex;
   align-items: flex-start;
@@ -1089,7 +1089,7 @@ body {
   color: var(--cp-on-surface);
 }
 
-/* ── Chips con imagen real (INCLUYE C2) ── */
+/*  Chips con imagen real (INCLUYE C2)  */
 .cp-desc-chips--img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1181,7 +1181,7 @@ body {
   color: #0369a1;
 }
 
-/* ── Dashboard SVG decorativo ── */
+/*  Dashboard SVG decorativo  */
 .cp-desc-dashboard {
   position: absolute;
   bottom: -4px;
@@ -1328,7 +1328,7 @@ body {
   color: var(--cp-on-surface);
 }
 
-/* ── Tool cards con ilustración ── */
+/*  Tool cards con ilustración  */
 .cp-tool-card--illus {
   position: relative;
   overflow: hidden;
@@ -1440,7 +1440,7 @@ body {
   }
 }
 
-/* ── Chips C3: colores ── */
+/*  Chips C3: colores  */
 .cp-chip--mailchimp {
   background: #fef9c3;
   color: #713f12;
@@ -1603,7 +1603,7 @@ body {
   border-color: rgba(146, 64, 14, 0.15);
 }
 
-/* ── Footer Cisco ── */
+/*  Footer Cisco  */
 .cp-cisco-footer {
   background: #eaf4ff;
   border-radius: var(--radius-card);
@@ -1683,4 +1683,257 @@ body {
     width: 160px;
     height: 120px;
   }
+}
+
+/* Mediaqueries */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .cp-section {
+        padding: 48px 16px 56px;
+    }
+
+    .cp-inner {
+        gap: 24px;
+    }
+
+    .cp-title {
+        font-size: clamp(28px, 5vw, 40px);
+    }
+
+    .cp-subtitle {
+        font-size: 15px;
+    }
+
+    .cp-tabs {
+        gap: 8px;
+    }
+
+    .cp-tab {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    .cp-desc-block {
+        flex-direction: column;
+    }
+
+    .cp-desc-left {
+        padding: 24px 20px;
+    }
+
+    .cp-desc-right {
+        padding: 24px 20px 24px;
+    }
+
+    .cp-desc-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .cp-desc-chips {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cp-desc-chips .cp-chip:nth-child(4),
+    .cp-desc-chips .cp-chip:nth-child(5) {
+        grid-column: auto;
+    }
+
+    .cp-cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .cp-cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cp-tagline-inner {
+        padding: 24px 20px;
+        gap: 16px;
+    }
+
+    .cp-cisco-footer {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .cp-cisco-footer-logo {
+        display: none;
+    }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+    .cp-section {
+        padding: 36px 14px 44px;
+    }
+
+    .cp-badge {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
+
+    .cp-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .cp-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cp-tab {
+        flex-shrink: 0;
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+
+    .cp-tool-card {
+        padding: 18px 16px 20px;
+    }
+
+    .cp-logo-wrap {
+        width: 72px;
+        height: 72px;
+    }
+
+    .cp-logo-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .cp-tool-name {
+        font-size: 14px;
+    }
+
+    .cp-tool-desc {
+        font-size: 13px;
+    }
+
+    .cp-desc-left {
+        padding: 20px 16px;
+    }
+
+    .cp-desc-right {
+        padding: 20px 16px 20px;
+    }
+
+    .cp-desc-title {
+        font-size: 18px;
+    }
+
+    .cp-desc-chips {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cp-desc-chips--img {
+        grid-template-columns: 1fr;
+    }
+
+    .cp-chip {
+        font-size: 12px;
+        padding: 9px 8px;
+    }
+
+    .cp-chip-img {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .cp-chip-img img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .cp-incluye-card {
+        padding: 10px 12px;
+    }
+
+    .cp-incluye-logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .cp-incluye-info strong {
+        font-size: 13px;
+    }
+
+    .cp-incluye-info p {
+        font-size: 11px;
+    }
+
+    .cp-tagline-inner {
+        padding: 20px 16px;
+        gap: 12px;
+    }
+
+    .cp-tagline-main {
+        font-size: 16px;
+    }
+
+    .cp-tagline-sub {
+        font-size: 13px;
+    }
+
+    .cp-tagline-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .cp-cta-banner {
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .cp-cta-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .cp-cta-heading {
+        font-size: 14px;
+    }
+
+    .cp-cta-note {
+        font-size: 12px;
+    }
+
+    .cp-cta-btn {
+        font-size: 14px;
+        padding: 11px 18px;
+    }
+
+    .cp-desc-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .cp-desc-icon .material-symbols-outlined {
+        font-size: 22px;
+    }
+
+    .cp-c3-footer {
+        padding: 18px 16px;
+    }
+
+    .cp-cisco-illus {
+        width: 120px;
+        height: 90px;
+        opacity: 0.1;
+    }
+
+    .cp-desc-laptop {
+        display: none;
+    }
+
+    .cp-desc-dashboard {
+        display: none;
+    }
 }

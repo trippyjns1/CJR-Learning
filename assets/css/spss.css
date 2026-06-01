@@ -1,134 +1,156 @@
 
+
 /*  HERO  */
 .spss-hero {
-    background: var(--color-white);
+    background: var(--color-tertiary);
     overflow: hidden;
+    padding: 64px 0 0;
 }
 
 .spss-hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 560px;
+    align-items: center;
+    gap: 48px;
+    min-height: 580px;
 }
 
 .spss-hero-text {
-    padding: 72px 56px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background: var(--color-tertiary);
-    position: relative;
-    overflow: hidden;
-}
-
-.spss-hero-text::before {
-    content: '';
-    position: absolute;
-    bottom: -80px;
-    right: -80px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(79,70,229,0.07) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
+    gap: 0;
+    padding-bottom: 64px;
 }
 
 .spss-hero-text h1 {
-    font-size: 2.75rem;
-    font-weight: 700;
-    line-height: 1.15;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
     color: var(--color-neutral);
     margin: 16px 0 20px;
+    letter-spacing: -0.02em;
 }
 
 .spss-hero-desc {
     font-size: 1rem;
     color: var(--color-text-muted);
     line-height: 1.75;
-    margin-bottom: 28px;
-    max-width: 420px;
+    max-width: 440px;
+    margin-bottom: 32px;
 }
 
 .spss-hero-actions {
     display: flex;
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
     margin-bottom: 36px;
 }
 
-.spss-hero-pills {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    padding-top: 28px;
-    border-top: 1px solid var(--color-border);
-    width: 100%;
-}
-
-.spss-hero-pill {
+/* Stats */
+.spss-hero-stats {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0;
     background: var(--color-white);
     border: 1px solid var(--color-border);
-    border-radius: 999px;
-    padding: 6px 14px;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--color-neutral);
+    border-radius: var(--radius-lg);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-card);
 }
 
-.spss-hero-pill svg {
+.spss-hero-stat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+}
+
+.spss-hero-stat-divider {
+    width: 1px;
+    height: 48px;
+    background: var(--color-border);
+    margin: 0 24px;
+    flex-shrink: 0;
+}
+
+.spss-hero-stat-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-primary);
     flex-shrink: 0;
 }
 
-.spss-hero-img-wrap {
-    position: relative;
-    overflow: hidden;
+.spss-stat-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-neutral);
+    line-height: 1;
 }
 
-.spss-hero-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.55) saturate(0.7) hue-rotate(200deg);
+.spss-stat-label {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
 }
 
-.spss-hero-badge-float {
-    position: absolute;
-    bottom: 28px;
-    left: 28px;
-    background: var(--color-white);
-    border-radius: var(--radius-lg);
-    padding: 14px 20px;
+/* Badge IBM SPSS */
+.spss-hero-ibm {
     display: flex;
     align-items: center;
     gap: 14px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    box-shadow: var(--shadow-card);
+    width: fit-content;
 }
 
-.spss-hero-badge-float img {
-    height: 40px;
+.spss-hero-ibm img {
+    height: 36px;
     width: auto;
     object-fit: contain;
-    filter: none;
 }
 
-.spss-float-label {
+.spss-ibm-label {
     font-size: 0.7rem;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 0.08em;
-    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
 }
 
-.spss-float-value {
-    font-size: 1.0625rem;
-    font-weight: 700;
+.spss-ibm-value {
+    font-size: 1rem;
+    font-weight: 800;
     color: var(--color-neutral);
-    line-height: 1.2;
+}
+
+/* Imagen derecha */
+.spss-hero-img-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.spss-hero-img-wrap img {
+    width: 150%;
+    max-width: 880px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 60px rgba(79, 70, 229, 0.25));
+    transform: translateX(50px);
 }
 
 /*  QUÉ ES SPSS  */
@@ -253,6 +275,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
 .spss-curso-card:hover {
     box-shadow: 0 10px 32px rgba(79, 70, 229, 0.12);
     transform: translateY(-4px);
@@ -319,7 +342,7 @@
     margin-bottom: 16px;
 }
 
-.spss-servicio-sm:last-child {
+.spss-servicios-grid-full .spss-servicio-sm:last-child {
     grid-column: 2;
 }
 
@@ -389,7 +412,9 @@
     flex-shrink: 0;
 }
 
-.spss-optimizacion-text { flex: 1; }
+.spss-optimizacion-text {
+    flex: 1;
+}
 
 .spss-optimizacion-title {
     font-size: 0.9375rem;
@@ -454,14 +479,18 @@
 .spss-software-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 3px;
     background: var(--color-primary);
     opacity: 0;
     transition: opacity 0.2s;
 }
 
-.spss-software-card:hover::before { opacity: 1; }
+.spss-software-card:hover::before {
+    opacity: 1;
+}
 
 .spss-software-card:hover {
     box-shadow: 0 12px 40px rgba(79, 70, 229, 0.12);
@@ -502,11 +531,14 @@
     border: 2px solid var(--color-primary);
 }
 
-.spss-software-card--featured::before { opacity: 1; }
+.spss-software-card--featured::before {
+    opacity: 1;
+}
 
 .spss-software-tag {
     position: absolute;
-    top: 14px; right: 14px;
+    top: 14px;
+    right: 14px;
     background: var(--color-primary);
     color: #fff;
     font-size: 0.7rem;
@@ -544,14 +576,19 @@
 .spss-proceso-step::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 3px;
     background: var(--color-primary);
     opacity: 0;
     transition: opacity 0.2s;
 }
 
-.spss-proceso-step:hover::before { opacity: 1; }
+.spss-proceso-step:hover::before {
+    opacity: 1;
+}
+
 .spss-proceso-step:hover {
     box-shadow: 0 10px 32px rgba(79, 70, 229, 0.1);
     transform: translateY(-4px);
@@ -605,8 +642,10 @@
 .spss-cta-card::before {
     content: '';
     position: absolute;
-    top: -80px; right: -80px;
-    width: 320px; height: 320px;
+    top: -80px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
     background: rgba(79, 70, 229, 0.25);
     border-radius: 50%;
 }
@@ -614,13 +653,18 @@
 .spss-cta-card::after {
     content: '';
     position: absolute;
-    bottom: -60px; left: 30%;
-    width: 200px; height: 200px;
+    bottom: -60px;
+    left: 30%;
+    width: 200px;
+    height: 200px;
     background: rgba(165, 180, 252, 0.08);
     border-radius: 50%;
 }
 
-.spss-cta-text { position: relative; z-index: 1; }
+.spss-cta-text {
+    position: relative;
+    z-index: 1;
+}
 
 .spss-cta-text h2 {
     font-size: 2.125rem;
@@ -680,30 +724,130 @@
 
 /*  RESPONSIVE  */
 @media (max-width: 1024px) {
-    .spss-hero-text { padding: 56px 40px; }
+    .spss-hero-inner {
+        gap: 32px;
+    }
+
+    .spss-hero-text h1 {
+        font-size: 2.5rem;
+    }
 }
 
 @media (max-width: 900px) {
-    .spss-hero-inner { grid-template-columns: 1fr; }
-    .spss-hero-img-wrap { height: 320px; }
-    .spss-hero-text { padding: 48px 24px; }
-    .spss-hero-text h1 { font-size: 2.25rem; }
-    .spss-que-inner { grid-template-columns: 1fr; gap: 36px; }
-    .spss-servicios-grid-full { grid-template-columns: repeat(2, 1fr); }
-    .spss-servicios-header { flex-direction: column; align-items: flex-start; }
-    .spss-software-grid { grid-template-columns: repeat(3, 1fr); }
-    .spss-proceso-grid { grid-template-columns: 1fr; }
-    .spss-proceso-arrow { transform: rotate(90deg); text-align: center; }
-    .spss-cta-card { flex-direction: column; padding: 40px 28px; text-align: center; }
-    .spss-cta-text p { max-width: 100%; }
-    .spss-cta-actions { width: 100%; }
-    .spss-cta-btn-wa, .spss-cta-btn-mail { justify-content: center; }
-    .spss-optimizacion { flex-direction: column; text-align: center; }
+    .spss-hero-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-bottom: 0;
+    }
+
+    .spss-hero-text {
+        padding-bottom: 0;
+    }
+
+    .spss-hero-text h1 {
+        font-size: 2.25rem;
+    }
+
+    .spss-hero-img-wrap {
+        height: auto;
+    }
+
+    .spss-hero-img-wrap img {
+        max-width: 100%;
+    }
+
+    .spss-que-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .spss-servicios-grid-full {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .spss-servicios-grid-full .spss-servicio-sm:last-child {
+        grid-column: auto;
+    }
+
+    .spss-servicios-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .spss-software-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .spss-proceso-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spss-proceso-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+    }
+
+    .spss-cta-card {
+        flex-direction: column;
+        padding: 40px 28px;
+        text-align: center;
+    }
+
+    .spss-cta-text p {
+        max-width: 100%;
+    }
+
+    .spss-cta-actions {
+        width: 100%;
+    }
+
+    .spss-cta-btn-wa,
+    .spss-cta-btn-mail {
+        justify-content: center;
+    }
+
+    .spss-optimizacion {
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 @media (max-width: 560px) {
     .spss-servicios-grid-full,
-    .spss-software-grid { grid-template-columns: 1fr; }
-    .spss-hero-text h1 { font-size: 1.875rem; }
-    .spss-hero-pills { gap: 8px; }
+    .spss-software-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .spss-hero-text h1 {
+        font-size: 1.875rem;
+    }
+
+    .spss-hero-stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .spss-hero-stat-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
+
+    .spss-hero-ibm {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .spss-hero {
+        padding: 48px 0 0;
+    }
+
+    .spss-hero-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .spss-cta-card {
+        padding: 32px 20px;
+    }
 }

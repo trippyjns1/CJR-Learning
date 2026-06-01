@@ -1,10 +1,8 @@
-/* ============================================================
-   CJR Learning — Sección Cómputo  |  computo.js
-   ============================================================ */
+
 (function () {
   'use strict';
 
-  /* --- Sistema de tabs / paneles --- */
+  /*  Sistema de tabs / paneles  */
   function initTabs() {
     var tabs = document.querySelectorAll('.cp-tab');
     var panels = document.querySelectorAll('.cp-panel');
@@ -30,7 +28,7 @@
     });
   }
 
-  /* --- Animaciones de entrada (elementos fijos) --- */
+  /*  Animaciones de entrada (elementos fijos)  */
   function initEntrada() {
     var targets = document.querySelectorAll(
       '.cp-header, .cp-tabs, .cp-cta-banner, .cp-tagline'
@@ -46,7 +44,7 @@
     targets.forEach(function (el) { obs.observe(el); });
   }
 
-  /* --- Punto de entrada --- */
+  /*  Punto de entrada  */
   function init() {
     initTabs();
     initEntrada();
@@ -58,3 +56,7 @@
     init();
   }
 })();
+
+const menuBtn = document.getElementById('menuBtn');
+const mainNav = document.getElementById('mainNav');
+if (menuBtn) menuBtn.addEventListener('click', () => mainNav.classList.toggle('open'));

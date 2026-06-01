@@ -42,3 +42,26 @@ if (cursosGrid && prevBtn && nextBtn) {
         cursosGrid.scrollBy({ left: -300, behavior: 'smooth' });
     });
 }
+
+// Efecto de escala en testimonios al centro
+const track = document.querySelector('.testimonios-track');
+const wrap = document.querySelector('.testimonios-track-wrap');
+
+if (track && wrap) {
+    const updateScale = () => {
+        const slides = track.querySelectorAll('.testimonio-slide');
+        const wrapCenter = wrap.getBoundingClientRect().left + wrap.offsetWidth / 2;
+
+        slides.forEach(slide => {
+            const slideCenter = slide.getBoundingClientRect().left + slide.offsetWidth / 2;
+            const distance = Math.abs(wrapCenter - slideCenter);
+            const maxDistance = wrap.offsetWidth / 2;
+            const scale = Math.max(0.85, 1.15 - (distance / maxDistance) * 0.3);
+            slide.style.transform = `scale(${scale})`;
+            slide.style.zIndex = Math.round(scale * 10);
+        });
+    };
+
+    // Actualizar en cada frame de la animación
+    setInterval(updateScale, 50);
+}
