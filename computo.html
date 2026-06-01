@@ -11,15 +11,42 @@
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/computo.css" />
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/computo.css" />
 </head>
 
 <body>
+  <header class="site-header">
+        <div class="header-inner">
+
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning">
+                </a>
+            </div>
+
+
+            <nav class="header-nav" id="mainNav">
+                <a href="index.html">Inicio</a>
+                <a href="ing_por.html">Inglés/Portugués</a>
+                <a href="spss.html">SPSS</a>
+                <a href="computo.html" class="active">Cómputo</a>
+                <a href="index.html#contacto" class="nav-btn-contacto">Contacto →</a>
+            </nav>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="menuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+  </header>
 
   <section id="computo" class="cp-section">
     <div class="cp-inner">
 
-      <!-- ENCABEZADO (siempre visible) -->
       <div class="cp-header">
         <div class="cp-badge">
           <span class="material-symbols-outlined" aria-hidden="true">computer</span>
@@ -32,7 +59,7 @@
         </p>
       </div>
 
-      <!-- TABS (siempre visible) -->
+      <!-- menu de computos -->
       <div class="cp-tabs" role="tablist" aria-label="Cursos de cómputo">
         <button class="cp-tab cp-tab--active" role="tab" aria-selected="true" data-tab="computo1">Cómputo 1</button>
         <button class="cp-tab" role="tab" aria-selected="false" data-tab="computo2">Cómputo 2</button>
@@ -40,12 +67,10 @@
         <button class="cp-tab" role="tab" aria-selected="false" data-tab="cisco">Cisco</button>
       </div>
 
-      <!-- ══════════════════════
-         PANEL: CÓMPUTO 1
-    ══════════════════════ -->
+      <!-- computo 1-->
       <div class="cp-panel cp-panel--active" data-panel="computo1" role="tabpanel">
 
-        <!-- Bloque descripción -->
+        <!-- descripcion -->
         <div class="cp-desc-block">
           <div class="cp-desc-left">
             <div class="cp-desc-header">
@@ -111,7 +136,7 @@
           </div>
         </div>
 
-        <!-- Herramientas -->
+        <!-- herramientas -->
         <div class="cp-tools-wrap">
           <div class="cp-section-title">
             <span class="cp-dot"></span>Herramientas y tecnologías que aprenderás<span class="cp-dot"></span>
@@ -186,14 +211,12 @@
           </div>
         </div>
 
-      </div><!-- /panel computo1 -->
+      </div>
 
-      <!-- ══════════════════════
-         PANEL: CÓMPUTO 2
-    ══════════════════════ -->
+      <!-- computo 2-->
       <div class="cp-panel" data-panel="computo2" role="tabpanel">
 
-        <!-- Bloque descripción C2 -->
+        <!-- descripción -->
         <div class="cp-desc-block">
           <div class="cp-desc-left">
             <div class="cp-desc-header">
@@ -253,7 +276,7 @@
 
           <div class="cp-desc-divider" aria-hidden="true"></div>
 
-          <!-- Columna derecha: chips con imagen real -->
+          <!-- columna derecha -->
           <div class="cp-desc-right">
             <div class="cp-desc-incluye-header">
               <div class="cp-desc-check"><span class="material-symbols-outlined">check_circle</span></div>
@@ -275,27 +298,27 @@
                 Query</span>
             </div>
 
-            <!-- Ilustración decorativa dashboard -->
+            <!-- ilustracion decorativa dashboard -->
             <div class="cp-desc-dashboard" aria-hidden="true">
               <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Monitor -->
+                <!-- monitor -->
                 <rect x="10" y="8" width="180" height="100" rx="8" fill="#e2dfff" stroke="#c3c0ff" stroke-width="1.5" />
                 <rect x="18" y="16" width="164" height="84" rx="4" fill="#f8f7ff" />
-                <!-- Barra superior nav -->
+                <!-- barra superior nav -->
                 <rect x="18" y="16" width="164" height="14" rx="4" fill="#ece9ff" />
                 <circle cx="30" cy="23" r="3" fill="#c3c0ff" />
                 <circle cx="40" cy="23" r="3" fill="#c3c0ff" opacity="0.6" />
                 <rect x="60" y="20" width="60" height="6" rx="3" fill="#c3c0ff" opacity="0.4" />
-                <!-- Gráfico barras -->
+                <!-- gráfico barras -->
                 <rect x="24" y="65" width="12" height="28" rx="3" fill="#7c6ff7" />
                 <rect x="40" y="52" width="12" height="41" rx="3" fill="#4f46e5" />
                 <rect x="56" y="58" width="12" height="35" rx="3" fill="#a5b4fc" />
                 <rect x="72" y="44" width="12" height="49" rx="3" fill="#4f46e5" />
                 <rect x="88" y="55" width="12" height="38" rx="3" fill="#7c6ff7" opacity="0.8" />
-                <!-- Línea tendencia -->
+                <!-- línea tendencia -->
                 <polyline points="30,65 46,52 62,58 78,44 94,55" stroke="#c3c0ff" stroke-width="1.5"
                   stroke-dasharray="3 2" fill="none" />
-                <!-- Donut chart -->
+                <!-- donut chart -->
                 <circle cx="150" cy="70" r="22" stroke="#e2dfff" stroke-width="8" fill="none" />
                 <circle cx="150" cy="70" r="22" stroke="#4f46e5" stroke-width="8" fill="none" stroke-dasharray="69 69"
                   stroke-dashoffset="0" stroke-linecap="round" />
@@ -303,13 +326,13 @@
                   stroke-dashoffset="-69" stroke-linecap="round" />
                 <circle cx="150" cy="70" r="22" stroke="#c3c0ff" stroke-width="8" fill="none" stroke-dasharray="34 104"
                   stroke-dashoffset="-104" stroke-linecap="round" />
-                <!-- KPIs debajo del monitor -->
+                <!-- kPIs debajo del monitor -->
                 <rect x="22" y="36" width="40" height="5" rx="2" fill="#c3c0ff" opacity="0.5" />
                 <rect x="22" y="44" width="30" height="4" rx="2" fill="#e2dfff" />
-                <!-- Base monitor -->
+                <!-- base monitor -->
                 <rect x="88" y="108" width="24" height="8" rx="2" fill="#d4d0f0" />
                 <rect x="70" y="116" width="60" height="6" rx="3" fill="#e2dfff" stroke="#c3c0ff" stroke-width="1" />
-                <!-- Cilindro base de datos -->
+                <!-- cilindro base de datos -->
                 <ellipse cx="168" cy="110" rx="14" ry="5" fill="#ece9ff" stroke="#c3c0ff" stroke-width="1" />
                 <rect x="154" y="100" width="28" height="10" fill="#ece9ff" />
                 <rect x="154" y="100" width="28" height="10" stroke="#c3c0ff" stroke-width="1" fill="none" />
@@ -320,7 +343,7 @@
           </div>
         </div>
 
-        <!-- Herramientas C2 -->
+        <!-- herramientas -->
         <div class="cp-tools-wrap">
           <div class="cp-section-title">
             <span class="cp-dot"></span>Herramientas y tecnologías que aprenderás<span class="cp-dot"></span>
@@ -406,14 +429,12 @@
           </div>
         </div>
 
-      </div><!-- /panel computo2 -->
+      </div>
 
-      <!-- ══════════════════════
-         PANEL: CÓMPUTO 3
-    ══════════════════════ -->
+      <!-- computo 2-->
       <div class="cp-panel" data-panel="computo3" role="tabpanel">
 
-        <!-- Bloque descripción C3 -->
+        <!-- descripción -->
         <div class="cp-desc-block">
           <div class="cp-desc-left">
             <div class="cp-desc-header">
@@ -466,7 +487,7 @@
 
           <div class="cp-desc-divider" aria-hidden="true"></div>
 
-          <!-- Columna derecha: cards INCLUYE con imagen + descripción -->
+          <!-- columna derecha-->
           <div class="cp-desc-right cp-desc-right--c3">
             <div class="cp-desc-incluye-header">
               <div class="cp-desc-check"><span class="material-symbols-outlined">check_circle</span></div>
@@ -485,7 +506,7 @@
           </div>
         </div>
 
-        <!-- Herramientas C3 -->
+        <!-- herramientas -->
         <div class="cp-tools-wrap">
           <div class="cp-section-title">
             <span class="cp-dot"></span>Herramientas y tecnologías que aprenderás<span class="cp-dot"></span>
@@ -493,7 +514,7 @@
 
           <div class="cp-grid cp-grid--2">
 
-            <!-- Mailchimp -->
+            <!-- mailchimp -->
             <div class="cp-tool-card cp-tool-card--illus">
               <div class="cp-tool-top">
                 <div class="cp-logo-wrap cp-logo-wrap--mailchimp">
@@ -511,7 +532,7 @@
               </div>
             </div>
 
-            <!-- Bizagi -->
+            <!-- bizagi -->
             <div class="cp-tool-card cp-tool-card--illus">
               <div class="cp-tool-top">
                 <div class="cp-logo-wrap cp-logo-wrap--bizagi">
@@ -529,7 +550,7 @@
               </div>
             </div>
 
-            <!-- ArcGIS -->
+            <!-- arcGIS -->
             <div class="cp-tool-card cp-tool-card--illus">
               <div class="cp-tool-top">
                 <div class="cp-logo-wrap cp-logo-wrap--arcgis">
@@ -547,7 +568,7 @@
               </div>
             </div>
 
-            <!-- Canva -->
+            <!-- canva -->
             <div class="cp-tool-card cp-tool-card--illus">
               <div class="cp-tool-top">
                 <div class="cp-logo-wrap cp-logo-wrap--canva">
@@ -568,7 +589,7 @@
           </div>
         </div>
 
-        <!-- Frase footer C3 -->
+        <!-- frase footer -->
         <div class="cp-c3-footer">
           <div class="cp-c3-footer-icon" aria-hidden="true">
             <span class="material-symbols-outlined">school</span>
@@ -579,14 +600,12 @@
           </p>
         </div>
 
-      </div><!-- /panel computo3 -->
+      </div>
 
-      <!-- ══════════════════════
-         PANEL: CISCO
-    ══════════════════════ -->
+      <!-- cisco -->
       <div class="cp-panel" data-panel="cisco" role="tabpanel">
 
-        <!-- Bloque descripción Cisco -->
+        <!-- descripcion -->
         <div class="cp-desc-block">
           <div class="cp-desc-left">
             <div class="cp-desc-header">
@@ -637,7 +656,7 @@
 
           <div class="cp-desc-divider" aria-hidden="true"></div>
 
-          <!-- Columna derecha Cisco -->
+          <!-- columna derecha -->
           <div class="cp-desc-right cp-desc-right--cisco">
             <div class="cp-desc-incluye-header">
               <div class="cp-desc-check"><span class="material-symbols-outlined">check_circle</span></div>
@@ -659,14 +678,14 @@
                   class="material-symbols-outlined">workspace_premium</span>CCNA</span>
             </div>
 
-            <!-- Imagen de red Cisco decorativa -->
+            <!-- imagen cisco -->
             <div class="cp-cisco-illus" aria-hidden="true">
               <img src="assets/images/logos/cisco_estru.png" alt="" />
             </div>
           </div>
         </div>
 
-        <!-- Footer Cisco -->
+        <!-- footer cisco -->
         <div class="cp-cisco-footer">
           <div class="cp-cisco-footer-left">
             <div class="cp-cisco-footer-icon" aria-hidden="true">
@@ -684,9 +703,9 @@
           </div>
         </div>
 
-      </div><!-- /panel cisco -->
+      </div>
 
-      <!-- CTA WHATSAPP (siempre visible) -->
+      <!-- wsp -->
       <div class="cp-cta-banner">
         <div class="cp-cta-left">
           <div class="cp-cta-icon">
@@ -710,7 +729,7 @@
         </a>
       </div>
 
-      <!-- FRASE MOTIVACIONAL (siempre visible) -->
+      <!-- frase -->
       <div class="cp-tagline">
         <div class="cp-tagline-inner">
           <div class="cp-tagline-icon">
@@ -728,7 +747,52 @@
     </div>
   </section>
 
-  <script src="computo.js" defer></script>
+  <!--  FOOTER  -->
+    <footer>
+        <div class="footer-bar">
+            <div class="footer-bar-inner">
+
+                <!-- Marca -->
+                <div class="footer-brand-col">
+                    <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning ">
+                    <span class="footer-brand">CJR Learning</span>
+                    <p class="footer-brand-desc">Apoyo académico profesional para estudiantes de todos los niveles. Rápidos,
+                        organizados y comprometidos.</p>
+                </div>
+
+                <!-- Navegación -->
+                <div class="footer-nav-col">
+                    <h4>Navegación</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Inicio</a>
+                        <a href="ing_por.html">Inglés/Portugués</a>
+                        <a href="spss.html">SPSS</a>
+                        <a href="computo.html">Cómputo</a>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="footer-services-col">
+                    <h4>Servicios</h4>
+                    <div class="footer-links">
+                        <a href="spss.html">Análisis SPSS</a>
+                        <a href="spss.html">Tesis e Investigación</a>
+                        <a href="ing_por.html">Inglés y Portugués</a>
+                        <a href="computo.html">Cómputo Avanzado</a>
+                        <a href="computo.html">Cisco Networking</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2026 <span>CJR Learning</span>. Todos los derechos reservados.</span>
+                <span class="footer-copy">Hecho para estudiantes peruanos</span>
+            </div>
+        </div>
+    </footer>
+
+  <script src="assets\js\computo.js" defer></script>
 </body>
 
 </html>

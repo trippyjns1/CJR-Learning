@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════
-   TOKENS — Cómputo Avanzado
-   ═══════════════════════════════════════════ */
+
 :root {
   --cp-primary: #3525cd;
   --cp-primary-light: #4f46e5;
@@ -67,9 +65,7 @@ body {
   gap: 36px;
 }
 
-/* ══════════════════════════════
-   ENCABEZADO
-══════════════════════════════ */
+/* ENCABEZADO */
 .cp-header {
   text-align: center;
   display: flex;
@@ -132,9 +128,7 @@ body {
   max-width: 560px;
 }
 
-/* ══════════════════════════════
-   TABS
-══════════════════════════════ */
+/* TABS */
 .cp-tabs {
   display: flex;
   justify-content: center;
@@ -166,9 +160,7 @@ body {
   border-color: var(--cp-primary);
 }
 
-/* ══════════════════════════════
-   WRAPPER DE HERRAMIENTAS
-══════════════════════════════ */
+/* WRAPPER DE HERRAMIENTAS */
 .cp-tools-wrap {
   display: flex;
   flex-direction: column;
@@ -202,9 +194,7 @@ body {
   flex-shrink: 0;
 }
 
-/* ══════════════════════════════
-   GRIDS
-══════════════════════════════ */
+/* GRIDS */
 .cp-grid {
   display: grid;
   gap: 18px;
@@ -232,9 +222,7 @@ body {
   }
 }
 
-/* ══════════════════════════════
-   TARJETA DE HERRAMIENTA
-══════════════════════════════ */
+/* TARJETA DE HERRAMIENTA */
 .cp-tool-card {
   background: var(--cp-card-bg);
   border-radius: var(--radius-card);
@@ -371,9 +359,7 @@ body {
   color: var(--cp-on-muted);
 }
 
-/* ══════════════════════════════
-   CTA BANNER WHATSAPP
-══════════════════════════════ */
+/* CTA BANNER WHATSAPP */
 .cp-cta-banner {
   background: var(--cp-icon-bg);
   border-radius: var(--radius-card);
@@ -459,9 +445,7 @@ body {
   font-size: 18px;
 }
 
-/* ══════════════════════════════
-   FRASE FINAL — tagline
-══════════════════════════════ */
+/* FRASE FINAL — tagline */
 .cp-tagline {
   background: var(--cp-card-bg);
   border-radius: var(--radius-card);
@@ -575,9 +559,7 @@ body {
   }
 }
 
-/* ══════════════════════════════
-   ANIMACIONES DE ENTRADA
-══════════════════════════════ */
+/* ANIMACIONES DE ENTRADA */
 @keyframes cpFadeUp {
   from {
     opacity: 0;
@@ -615,9 +597,7 @@ body {
 
 
 
-/* ══════════════════════════════
-   BLOQUE DESCRIPCIÓN
-══════════════════════════════ */
+/* BLOQUE DESCRIPCIÓN */
 .cp-desc-block {
   background: var(--cp-card-bg);
   border-radius: var(--radius-card);
@@ -944,9 +924,7 @@ body {
   animation: none;
 }
 
-/* ══════════════════════════════
-   SISTEMA DE PANELES
-══════════════════════════════ */
+/* SISTEMA DE PANELES */
 .cp-panel {
   display: none;
   flex-direction: column;
@@ -987,9 +965,7 @@ body {
   animation: none !important;
 }
 
-/* ══════════════════════════════
-   CÓMPUTO 2 — Tokens de color
-══════════════════════════════ */
+/* CÓMPUTO 2 — Tokens de color */
 :root {
   --cp-powerbi-bg: #fff4d6;
   --cp-powerbi-text: #92400e;
@@ -1232,15 +1208,6 @@ body {
   }
 }
 
-/* Chips C2 — grid 3 columnas igual que C1 */
-/* Los colores de .cp-chip--powerbi/spss/pivot/query/inventor
-   ya están definidos arriba con las pills.
-   Solo necesitamos que hereden el mismo estilo base de .cp-chip */
-
-/* Fila 2 de C2: pivot y query en cols 1 y 2, inventor en col 3 */
-/* El grid ya es repeat(3,1fr) por defecto desde .cp-desc-chips */
-
-/* ── Chips C2: colores de fondo ── */
 .cp-chip--powerbi {
   background: #fff4d6;
   color: #92400e;
@@ -1271,9 +1238,7 @@ body {
   border-color: rgba(3, 105, 161, 0.2);
 }
 
-/* ══════════════════════════════
-   CÓMPUTO 3 — Estilos
-══════════════════════════════ */
+/* CÓMPUTO 3 — Estilos */
 
 /* Columna derecha C3 */
 .cp-desc-right--c3 {
@@ -1500,9 +1465,7 @@ body {
   border-color: rgba(3, 105, 161, 0.2);
 }
 
-/* ══════════════════════════════
-   CISCO — Estilos
-══════════════════════════════ */
+/* CISCO — Estilos */
 
 /* Ícono Cisco en el header (imagen en lugar de material symbol) */
 .cp-desc-icon--cisco {

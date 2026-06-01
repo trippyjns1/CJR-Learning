@@ -13,10 +13,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/ing_por.css" />
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/ing_por.css" />
 </head>
 
 <body>
+  <header class="site-header">
+        <div class="header-inner">
+
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning">
+                </a>
+            </div>
+
+
+            <nav class="header-nav" id="mainNav">
+                <a href="index.html">Inicio</a>
+                <a href="ing_por.html" class="active">Inglés/Portugués</a>
+                <a href="spss.html">SPSS</a>
+                <a href="computo.html">Cómputo</a>
+                <a href="index.html#contacto" class="nav-btn-contacto">Contacto →</a>
+            </nav>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="menuBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+  </header>
 
   <section id="ingles" class="ip-section">
     <div class="ip-inner">
@@ -184,7 +212,52 @@
     </div>
   </section>
 
-  <script src="ingles-portugues.js" defer></script>
+  <!--  FOOTER  -->
+    <footer>
+        <div class="footer-bar">
+            <div class="footer-bar-inner">
+
+                <!-- Marca -->
+                <div class="footer-brand-col">
+                    <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning ">
+                    <span class="footer-brand">CJR Learning</span>
+                    <p class="footer-brand-desc">Apoyo académico profesional para estudiantes de todos los niveles. Rápidos,
+                        organizados y comprometidos.</p>
+                </div>
+
+                <!-- Navegación -->
+                <div class="footer-nav-col">
+                    <h4>Navegación</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Inicio</a>
+                        <a href="ing_por.html">Inglés/Portugués</a>
+                        <a href="spss.html">SPSS</a>
+                        <a href="computo.html">Cómputo</a>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="footer-services-col">
+                    <h4>Servicios</h4>
+                    <div class="footer-links">
+                        <a href="spss.html">Análisis SPSS</a>
+                        <a href="spss.html">Tesis e Investigación</a>
+                        <a href="ing_por.html">Inglés y Portugués</a>
+                        <a href="computo.html">Cómputo Avanzado</a>
+                        <a href="computo.html">Cisco Networking</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span class="footer-copy">© 2026 <span>CJR Learning</span>. Todos los derechos reservados.</span>
+                <span class="footer-copy">Hecho para estudiantes peruanos</span>
+            </div>
+        </div>
+    </footer>
+
+  <script src="assets\js\ingles-portugues.js" defer></script>
 </body>
 
 </html>
