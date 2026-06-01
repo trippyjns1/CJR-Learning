@@ -1,0 +1,1723 @@
+/* ═══════════════════════════════════════════
+   TOKENS — Cómputo Avanzado
+   ═══════════════════════════════════════════ */
+:root {
+  --cp-primary: #3525cd;
+  --cp-primary-light: #4f46e5;
+  --cp-primary-fixed: #e2dfff;
+  --cp-primary-dim: #c3c0ff;
+  --cp-on-primary: #ffffff;
+  --cp-on-surface: #181445;
+  --cp-on-muted: #464555;
+  --cp-surface: #ffffff;
+  --cp-bg: #f0eeff;
+  --cp-card-bg: #ffffff;
+  --cp-border: rgba(199, 196, 216, 0.5);
+  --cp-icon-bg: #ece9ff;
+  --cp-divider: rgba(199, 196, 216, 0.6);
+  --cp-shadow: 0 4px 32px rgba(53, 37, 205, 0.08);
+  --font: 'Hanken Grotesk', sans-serif;
+  --radius-card: 20px;
+  --radius-icon: 10px;
+
+  --cp-word-bg: #dde8ff;
+  --cp-word-text: #2a3fc0;
+  --cp-excel-bg: #d6f0e0;
+  --cp-excel-text: #166534;
+  --cp-autocad-bg: #fce8ee;
+  --cp-autocad-text: #b91c4a;
+  --cp-pseint-bg: #ede8ff;
+  --cp-pseint-text: #5b4fcf;
+  --cp-python-bg: #e8f3ff;
+  --cp-python-text: #1e5fa3;
+}
+
+/* ── BASE ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--cp-bg);
+  color: var(--cp-on-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
+}
+
+/* ── SECCIÓN ── */
+.cp-section {
+  padding: 72px 24px 80px;
+  background: var(--cp-bg);
+}
+
+.cp-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* ══════════════════════════════
+   ENCABEZADO
+══════════════════════════════ */
+.cp-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--cp-card-bg);
+  color: var(--cp-primary);
+  border: 1.5px solid var(--cp-border);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cp-badge .material-symbols-outlined {
+  font-size: 15px;
+}
+
+.cp-title {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--cp-on-surface);
+  letter-spacing: -0.02em;
+}
+
+.cp-title-croma {
+  background: linear-gradient(100deg, #4f46e5 0%, #7c6ff7 35%, #c3c0ff 60%, #4f46e5 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cpCromaFlow 4s linear infinite;
+  display: inline-block;
+}
+
+@keyframes cpCromaFlow {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.cp-subtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--cp-on-muted);
+  max-width: 560px;
+}
+
+/* ══════════════════════════════
+   TABS
+══════════════════════════════ */
+.cp-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cp-tab {
+  padding: 10px 28px;
+  border-radius: 999px;
+  border: 1.5px solid var(--cp-border);
+  background: var(--cp-card-bg);
+  color: var(--cp-on-muted);
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.cp-tab:hover:not(.cp-tab--active) {
+  border-color: var(--cp-primary-light);
+  background: var(--cp-icon-bg);
+}
+
+.cp-tab--active {
+  background: var(--cp-primary);
+  color: var(--cp-on-primary);
+  border-color: var(--cp-primary);
+}
+
+/* ══════════════════════════════
+   WRAPPER DE HERRAMIENTAS
+══════════════════════════════ */
+.cp-tools-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cp-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cp-on-surface);
+}
+
+.cp-section-title::before,
+.cp-section-title::after {
+  content: '';
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: var(--cp-divider);
+}
+
+.cp-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cp-primary);
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════
+   GRIDS
+══════════════════════════════ */
+.cp-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.cp-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cp-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 900px) {
+  .cp-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .cp-grid--3,
+  .cp-grid--2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ══════════════════════════════
+   TARJETA DE HERRAMIENTA
+══════════════════════════════ */
+.cp-tool-card {
+  background: var(--cp-card-bg);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--cp-border);
+  box-shadow: var(--cp-shadow);
+  padding: 24px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+
+.cp-tool-card:hover {
+  box-shadow: 0 8px 40px rgba(53, 37, 205, 0.13);
+  transform: translateY(-3px);
+}
+
+/* TOP: círculo grande a la izquierda + meta a la derecha */
+.cp-tool-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ── CÍRCULO GRANDE DEL LOGO ── */
+.cp-logo-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.cp-logo-wrap--word {
+  background: var(--cp-word-bg);
+}
+
+.cp-logo-wrap--excel {
+  background: var(--cp-excel-bg);
+}
+
+.cp-logo-wrap--autocad {
+  background: var(--cp-autocad-bg);
+}
+
+.cp-logo-wrap--pseint {
+  background: var(--cp-pseint-bg);
+}
+
+.cp-logo-wrap--python {
+  background: var(--cp-python-bg);
+}
+
+/* Logo dentro del círculo: ocupa ~70% del círculo */
+.cp-logo-img {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+
+/* PSeInt: fondo negro → multiply lo hace transparente */
+.cp-logo-img--pseint {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* Meta: nombre encima, pill debajo */
+.cp-tool-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-tool-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cp-on-surface);
+  line-height: 1.3;
+}
+
+/* Pills */
+.cp-pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  width: fit-content;
+  border: 1.5px solid transparent;
+}
+
+.cp-pill--word {
+  background: var(--cp-word-bg);
+  color: var(--cp-word-text);
+  border-color: rgba(42, 63, 192, 0.15);
+}
+
+.cp-pill--excel {
+  background: var(--cp-excel-bg);
+  color: var(--cp-excel-text);
+  border-color: rgba(22, 101, 52, 0.15);
+}
+
+.cp-pill--autocad {
+  background: var(--cp-autocad-bg);
+  color: var(--cp-autocad-text);
+  border-color: rgba(185, 28, 74, 0.15);
+}
+
+.cp-pill--pseint {
+  background: var(--cp-pseint-bg);
+  color: var(--cp-pseint-text);
+  border-color: rgba(91, 79, 207, 0.15);
+}
+
+.cp-pill--python {
+  background: var(--cp-python-bg);
+  color: var(--cp-python-text);
+  border-color: rgba(30, 95, 163, 0.15);
+}
+
+/* Descripción debajo del top */
+.cp-tool-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--cp-on-muted);
+}
+
+/* ══════════════════════════════
+   CTA BANNER WHATSAPP
+══════════════════════════════ */
+.cp-cta-banner {
+  background: var(--cp-icon-bg);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--cp-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cp-cta-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cp-cta-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--cp-primary);
+  color: var(--cp-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cp-cta-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cp-cta-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cp-on-surface);
+  margin-bottom: 3px;
+}
+
+.cp-cta-note {
+  font-size: 13px;
+  color: var(--cp-on-muted);
+  line-height: 1.5;
+}
+
+.cp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cp-on-surface);
+  color: var(--cp-on-primary);
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font);
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(24, 20, 69, 0.22);
+}
+
+.cp-cta-btn:hover {
+  background: var(--cp-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(53, 37, 205, 0.35);
+}
+
+.cp-cta-btn:active {
+  transform: translateY(0);
+}
+
+.cp-wa-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.cp-cta-btn .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* ══════════════════════════════
+   FRASE FINAL — tagline
+══════════════════════════════ */
+.cp-tagline {
+  background: var(--cp-card-bg);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--cp-border);
+  box-shadow: var(--cp-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.cp-tagline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #4f46e5, #7c6ff7, #c3c0ff);
+}
+
+.cp-tagline-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 32px 36px 32px 40px;
+  flex-wrap: wrap;
+}
+
+.cp-tagline-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--cp-icon-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cp-tagline-icon .material-symbols-outlined {
+  font-size: 28px;
+  color: var(--cp-primary);
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.cp-tagline-text {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cp-tagline-main {
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 700;
+  color: var(--cp-on-surface);
+  line-height: 1.35;
+}
+
+.cp-tagline-highlight {
+  background: linear-gradient(100deg, #4f46e5 0%, #7c6ff7 50%, #c3c0ff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: cpCromaFlow 4s linear infinite;
+  display: inline;
+}
+
+.cp-tagline-sub {
+  font-size: 14px;
+  color: var(--cp-on-muted);
+  line-height: 1.5;
+}
+
+.cp-tagline-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.cp-tagline-dots span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cp-primary-dim);
+}
+
+.cp-tagline-dots span:nth-child(1) {
+  opacity: 0.4;
+}
+
+.cp-tagline-dots span:nth-child(2) {
+  opacity: 0.7;
+}
+
+.cp-tagline-dots span:nth-child(3) {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .cp-tagline-inner {
+    padding: 24px 28px;
+  }
+
+  .cp-tagline-dots {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════
+   ANIMACIONES DE ENTRADA
+══════════════════════════════ */
+@keyframes cpFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cp-header,
+.cp-tabs,
+.cp-cta-banner,
+.cp-tagline {
+  opacity: 0;
+}
+
+.cp-header.visible {
+  animation: cpFadeUp 0.55s ease 0.05s both;
+}
+
+.cp-tabs.visible {
+  animation: cpFadeUp 0.55s ease 0.15s both;
+}
+
+.cp-cta-banner.visible {
+  animation: cpFadeUp 0.55s ease 0.35s both;
+}
+
+.cp-tagline.visible {
+  animation: cpFadeUp 0.55s ease 0.45s both;
+}
+
+
+
+/* ══════════════════════════════
+   BLOQUE DESCRIPCIÓN
+══════════════════════════════ */
+.cp-desc-block {
+  background: var(--cp-card-bg);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--cp-border);
+  box-shadow: var(--cp-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.cp-desc-block.visible {
+  animation: cpFadeUp 0.55s ease 0.12s both;
+}
+
+@media (min-width: 768px) {
+  .cp-desc-block {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+/* ── Columna izquierda ── */
+.cp-desc-left {
+  flex: 1.1;
+  padding: 36px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cp-desc-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.cp-desc-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--cp-icon-bg);
+  border: 1.5px solid rgba(199, 196, 216, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-desc-icon .material-symbols-outlined {
+  font-size: 28px;
+  color: var(--cp-primary);
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+.cp-desc-title {
+  font-size: clamp(20px, 2.2vw, 24px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--cp-on-surface);
+  margin-bottom: 8px;
+}
+
+.cp-desc-title-accent {
+  color: var(--cp-primary-light);
+}
+
+.cp-desc-underline {
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--cp-primary);
+}
+
+.cp-desc-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--cp-on-muted);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--cp-divider);
+}
+
+.cp-desc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.cp-desc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cp-divider);
+}
+
+.cp-desc-item:last-child {
+  border-bottom: none;
+}
+
+.cp-desc-item-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--cp-icon-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-desc-item-icon .material-symbols-outlined {
+  font-size: 17px;
+  color: var(--cp-primary);
+}
+
+.cp-desc-item p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--cp-on-muted);
+  padding-top: 5px;
+}
+
+/* ── Divisor vertical ── */
+.cp-desc-divider {
+  background: var(--cp-border);
+  height: 1px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .cp-desc-divider {
+    height: auto;
+    width: 1px;
+  }
+}
+
+/* ── Columna derecha ── */
+.cp-desc-right {
+  flex: 1;
+  padding: 36px 32px 0 32px;
+  background: var(--cp-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  /* para el laptop posicionado */
+  overflow: hidden;
+}
+
+/* Header INCLUYE */
+.cp-desc-incluye-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cp-desc-check {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--cp-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cp-desc-check .material-symbols-outlined {
+  font-size: 17px;
+  color: #fff;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.cp-desc-incluye-label {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--cp-on-surface);
+  text-transform: uppercase;
+}
+
+/* Línea bajo INCLUYE */
+.cp-desc-underline--right {
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--cp-primary);
+  margin-bottom: 2px;
+}
+
+/* Grid de chips */
+.cp-desc-chips {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 10px;
+}
+
+/* Fila 2: PSeInt y Python centrados (2 de 3 columnas) */
+.cp-desc-chips .cp-chip:nth-child(4) {
+  grid-column: 1;
+}
+
+.cp-desc-chips .cp-chip:nth-child(5) {
+  grid-column: 2;
+}
+
+.cp-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1.5px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: default;
+}
+
+.cp-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(53, 37, 205, 0.12);
+}
+
+.cp-chip .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.cp-chip--word {
+  background: #dde8ff;
+  color: #2a3fc0;
+  border-color: rgba(42, 63, 192, 0.2);
+}
+
+.cp-chip--excel {
+  background: #d6f0e0;
+  color: #166534;
+  border-color: rgba(22, 101, 52, 0.2);
+}
+
+.cp-chip--autocad {
+  background: #fce8ee;
+  color: #b91c4a;
+  border-color: rgba(185, 28, 74, 0.2);
+}
+
+.cp-chip--pseint {
+  background: #ede8ff;
+  color: #5b4fcf;
+  border-color: rgba(91, 79, 207, 0.2);
+}
+
+.cp-chip--python {
+  background: #d6f0f5;
+  color: #0e7490;
+  border-color: rgba(14, 116, 144, 0.2);
+}
+
+/* ── Laptop decorativo esquina inferior derecha ── */
+.cp-desc-laptop {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 130px;
+  height: 90px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Pantalla del laptop SVG */
+.cp-desc-laptop svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .cp-desc-right {
+    padding-bottom: 36px;
+  }
+
+  .cp-desc-laptop {
+    width: 100px;
+    height: 70px;
+  }
+}
+
+/* Panel con gap interno entre desc-block y tools-wrap */
+.cp-panel--active {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Placeholder para paneles vacíos */
+.cp-panel-placeholder {
+  background: var(--cp-card-bg);
+  border-radius: var(--radius-card);
+  border: 1px dashed var(--cp-border);
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--cp-on-muted);
+}
+
+.cp-panel-placeholder .material-symbols-outlined {
+  font-size: 36px;
+  color: var(--cp-primary-dim);
+}
+
+.cp-panel-placeholder p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Quitar opacity:0 al desc-block dentro de panel (ya lo hereda el panel) */
+.cp-panel .cp-desc-block {
+  opacity: 1;
+  animation: none;
+}
+
+/* ══════════════════════════════
+   SISTEMA DE PANELES
+══════════════════════════════ */
+.cp-panel {
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cp-panel--active {
+  display: flex;
+  animation: cpFadeUp 0.35s ease both;
+}
+
+/* Placeholder paneles vacíos */
+.cp-panel-placeholder {
+  background: var(--cp-card-bg);
+  border-radius: var(--radius-card);
+  border: 1.5px dashed var(--cp-border);
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--cp-on-muted);
+}
+
+.cp-panel-placeholder .material-symbols-outlined {
+  font-size: 40px;
+  color: var(--cp-primary-dim);
+}
+
+.cp-panel-placeholder p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* desc-block dentro de panel: sin opacity:0 propio */
+.cp-panel .cp-desc-block {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* ══════════════════════════════
+   CÓMPUTO 2 — Tokens de color
+══════════════════════════════ */
+:root {
+  --cp-powerbi-bg: #fff4d6;
+  --cp-powerbi-text: #92400e;
+  --cp-spss-bg: #dbeafe;
+  --cp-spss-text: #1e40af;
+  --cp-pivot-bg: #d6f0e0;
+  --cp-pivot-text: #166534;
+  --cp-query-bg: #e0f2fe;
+  --cp-query-text: #0369a1;
+  --cp-inventor-bg: #fee2e2;
+  --cp-inventor-text: #991b1b;
+}
+
+/* Pills nuevas */
+.cp-pill--powerbi {
+  background: var(--cp-powerbi-bg);
+  color: var(--cp-powerbi-text);
+  border-color: rgba(146, 64, 14, 0.15);
+}
+
+.cp-pill--spss {
+  background: var(--cp-spss-bg);
+  color: var(--cp-spss-text);
+  border-color: rgba(30, 64, 175, 0.15);
+}
+
+.cp-pill--pivot {
+  background: var(--cp-pivot-bg);
+  color: var(--cp-pivot-text);
+  border-color: rgba(22, 101, 52, 0.15);
+}
+
+.cp-pill--query {
+  background: var(--cp-query-bg);
+  color: var(--cp-query-text);
+  border-color: rgba(3, 105, 161, 0.15);
+}
+
+.cp-pill--inventor {
+  background: var(--cp-inventor-bg);
+  color: var(--cp-inventor-text);
+  border-color: rgba(153, 27, 27, 0.15);
+}
+
+/* Logo wraps nuevos */
+.cp-logo-wrap--powerbi {
+  background: var(--cp-powerbi-bg);
+}
+
+.cp-logo-wrap--spss {
+  background: var(--cp-spss-bg);
+}
+
+.cp-logo-wrap--pivot {
+  background: var(--cp-pivot-bg);
+}
+
+.cp-logo-wrap--query {
+  background: var(--cp-query-bg);
+}
+
+.cp-logo-wrap--inventor {
+  background: var(--cp-inventor-bg);
+}
+
+/* ── Items de lista con título + texto ── */
+.cp-desc-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.cp-desc-item-content strong {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--cp-on-surface);
+  line-height: 1.3;
+}
+
+.cp-desc-item-content p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--cp-on-muted);
+  padding-top: 0;
+}
+
+/* ── Frase destacada (caja azul) ── */
+.cp-desc-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--cp-icon-bg);
+  border-radius: 14px;
+  border: 1px solid var(--cp-border);
+  padding: 16px 18px;
+  margin-top: 4px;
+}
+
+.cp-desc-highlight-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--cp-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-desc-highlight-icon .material-symbols-outlined {
+  font-size: 18px;
+  color: #fff;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.cp-desc-highlight p {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--cp-on-surface);
+}
+
+/* ── Chips con imagen real (INCLUYE C2) ── */
+.cp-desc-chips--img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.cp-chip-img {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1.5px solid var(--cp-border);
+  background: var(--cp-card-bg);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--cp-on-surface);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: default;
+}
+
+.cp-chip-img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(53, 37, 205, 0.1);
+  border-color: rgba(199, 196, 216, 0.9);
+}
+
+.cp-chip-img img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Colores de fondo por herramienta */
+.cp-chip-img--excel {
+  background: #f0fdf4;
+  border-color: rgba(22, 101, 52, 0.2);
+}
+
+.cp-chip-img--excel span {
+  color: #166534;
+}
+
+.cp-chip-img--powerbi {
+  background: #fffbeb;
+  border-color: rgba(146, 64, 14, 0.2);
+}
+
+.cp-chip-img--powerbi span {
+  color: #92400e;
+}
+
+.cp-chip-img--spss {
+  background: #eff6ff;
+  border-color: rgba(30, 64, 175, 0.2);
+}
+
+.cp-chip-img--spss span {
+  color: #1e40af;
+}
+
+.cp-chip-img--inventor {
+  background: #fff1f2;
+  border-color: rgba(153, 27, 27, 0.2);
+}
+
+.cp-chip-img--inventor span {
+  color: #991b1b;
+}
+
+.cp-chip-img--pivot {
+  background: #f0fdf4;
+  border-color: rgba(22, 101, 52, 0.2);
+}
+
+.cp-chip-img--pivot span {
+  color: #166534;
+}
+
+.cp-chip-img--query {
+  background: #f0f9ff;
+  border-color: rgba(3, 105, 161, 0.2);
+}
+
+.cp-chip-img--query span {
+  color: #0369a1;
+}
+
+/* ── Dashboard SVG decorativo ── */
+.cp-desc-dashboard {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 200px;
+  height: 130px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.cp-desc-dashboard svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .cp-desc-dashboard {
+    width: 150px;
+    height: 100px;
+  }
+
+  .cp-desc-chips--img {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Chips C2 — grid 3 columnas igual que C1 */
+/* Los colores de .cp-chip--powerbi/spss/pivot/query/inventor
+   ya están definidos arriba con las pills.
+   Solo necesitamos que hereden el mismo estilo base de .cp-chip */
+
+/* Fila 2 de C2: pivot y query en cols 1 y 2, inventor en col 3 */
+/* El grid ya es repeat(3,1fr) por defecto desde .cp-desc-chips */
+
+/* ── Chips C2: colores de fondo ── */
+.cp-chip--powerbi {
+  background: #fff4d6;
+  color: #92400e;
+  border-color: rgba(146, 64, 14, 0.2);
+}
+
+.cp-chip--spss {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: rgba(30, 64, 175, 0.2);
+}
+
+.cp-chip--inventor {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: rgba(153, 27, 27, 0.2);
+}
+
+.cp-chip--pivot {
+  background: #d6f0e0;
+  color: #166534;
+  border-color: rgba(22, 101, 52, 0.2);
+}
+
+.cp-chip--query {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: rgba(3, 105, 161, 0.2);
+}
+
+/* ══════════════════════════════
+   CÓMPUTO 3 — Estilos
+══════════════════════════════ */
+
+/* Columna derecha C3 */
+.cp-desc-right--c3 {
+  padding-bottom: 24px;
+}
+
+/* Cards INCLUYE con imagen + texto + ícono decorativo */
+.cp-incluye-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cp-incluye-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1.5px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.cp-incluye-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(53, 37, 205, 0.1);
+}
+
+.cp-incluye-card--yellow {
+  background: #fffbeb;
+  border-color: rgba(217, 119, 6, 0.2);
+}
+
+.cp-incluye-card--red {
+  background: #fff7f0;
+  border-color: rgba(220, 38, 38, 0.15);
+}
+
+.cp-incluye-card--green {
+  background: #f0fdf4;
+  border-color: rgba(22, 101, 52, 0.18);
+}
+
+.cp-incluye-card--teal {
+  background: #f0fdff;
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+.cp-incluye-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.cp-incluye-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cp-incluye-info strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cp-on-surface);
+  line-height: 1.2;
+}
+
+.cp-incluye-info p {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--cp-on-muted);
+}
+
+.cp-incluye-deco {
+  flex-shrink: 0;
+  opacity: 0.3;
+}
+
+.cp-incluye-deco .material-symbols-outlined {
+  font-size: 28px;
+  color: var(--cp-on-surface);
+}
+
+/* ── Tool cards con ilustración ── */
+.cp-tool-card--illus {
+  position: relative;
+  overflow: hidden;
+}
+
+.cp-tool-illus {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 140px;
+  height: 100px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.cp-tool-illus img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+/* Pills C3 */
+.cp-pill--mailchimp {
+  background: #fef9c3;
+  color: #713f12;
+  border-color: rgba(113, 63, 18, 0.18);
+}
+
+.cp-pill--bizagi {
+  background: #fff7ed;
+  color: #c2410c;
+  border-color: rgba(194, 65, 12, 0.18);
+}
+
+.cp-pill--arcgis {
+  background: #ecfdf5;
+  color: #065f46;
+  border-color: rgba(6, 95, 70, 0.18);
+}
+
+.cp-pill--canva {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: rgba(3, 105, 161, 0.18);
+}
+
+/* Logo wraps C3 */
+.cp-logo-wrap--mailchimp {
+  background: #fef9c3;
+}
+
+.cp-logo-wrap--bizagi {
+  background: #fff7ed;
+}
+
+.cp-logo-wrap--arcgis {
+  background: #ecfdf5;
+}
+
+.cp-logo-wrap--canva {
+  background: #e0f2fe;
+}
+
+/* ── Footer frase C3 ── */
+.cp-c3-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--cp-primary);
+  border-radius: var(--radius-card);
+  padding: 24px 28px;
+}
+
+.cp-c3-footer-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-c3-footer-icon .material-symbols-outlined {
+  font-size: 26px;
+  color: #fff;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.cp-c3-footer-text {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .cp-tool-illus {
+    width: 100px;
+    height: 70px;
+    opacity: 0.12;
+  }
+
+  .cp-c3-footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ── Chips C3: colores ── */
+.cp-chip--mailchimp {
+  background: #fef9c3;
+  color: #713f12;
+  border-color: rgba(113, 63, 18, 0.2);
+}
+
+.cp-chip--bizagi {
+  background: #fff7ed;
+  color: #c2410c;
+  border-color: rgba(194, 65, 12, 0.2);
+}
+
+.cp-chip--arcgis {
+  background: #ecfdf5;
+  color: #065f46;
+  border-color: rgba(6, 95, 70, 0.2);
+}
+
+.cp-chip--canva {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: rgba(3, 105, 161, 0.2);
+}
+
+/* ══════════════════════════════
+   CISCO — Estilos
+══════════════════════════════ */
+
+/* Ícono Cisco en el header (imagen en lugar de material symbol) */
+.cp-desc-icon--cisco {
+  background: #e8f4ff;
+  border-color: rgba(0, 86, 163, 0.2);
+  padding: 8px;
+}
+
+.cp-cisco-badge {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+/* Columna derecha Cisco */
+.cp-desc-right--cisco {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+/* Chips Cisco: colores */
+.cp-chip--cisco-pt {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: rgba(30, 64, 175, 0.2);
+}
+
+.cp-chip--cisco-redes {
+  background: #d6f0e0;
+  color: #166534;
+  border-color: rgba(22, 101, 52, 0.2);
+}
+
+.cp-chip--cisco-ip {
+  background: #ede8ff;
+  color: #5b4fcf;
+  border-color: rgba(91, 79, 207, 0.2);
+}
+
+.cp-chip--cisco-sw {
+  background: #fff4d6;
+  color: #92400e;
+  border-color: rgba(146, 64, 14, 0.2);
+}
+
+.cp-chip--cisco-seg {
+  background: #fce8ee;
+  color: #b91c4a;
+  border-color: rgba(185, 28, 74, 0.2);
+}
+
+.cp-chip--cisco-ccna {
+  background: #fff4d6;
+  color: #92400e;
+  border-color: rgba(146, 64, 14, 0.2);
+}
+
+/* Ilustración de red Cisco */
+.cp-cisco-illus {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 220px;
+  height: 160px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.cp-cisco-illus img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+/* Logo wraps Cisco */
+.cp-logo-wrap--cisco-pt {
+  background: #dbeafe;
+}
+
+.cp-logo-wrap--cisco-redes {
+  background: #d6f0e0;
+}
+
+.cp-logo-wrap--cisco-ip {
+  background: #ede8ff;
+}
+
+.cp-logo-wrap--cisco-sw {
+  background: #fff4d6;
+}
+
+.cp-logo-wrap--cisco-seg {
+  background: #fce8ee;
+}
+
+.cp-logo-wrap--cisco-ccna {
+  background: #fff4d6;
+}
+
+/* Pills Cisco */
+.cp-pill--cisco-pt {
+  background: #dbeafe;
+  color: #1e40af;
+  border-color: rgba(30, 64, 175, 0.15);
+}
+
+.cp-pill--cisco-redes {
+  background: #d6f0e0;
+  color: #166534;
+  border-color: rgba(22, 101, 52, 0.15);
+}
+
+.cp-pill--cisco-ip {
+  background: #ede8ff;
+  color: #5b4fcf;
+  border-color: rgba(91, 79, 207, 0.15);
+}
+
+.cp-pill--cisco-sw {
+  background: #fff4d6;
+  color: #92400e;
+  border-color: rgba(146, 64, 14, 0.15);
+}
+
+.cp-pill--cisco-seg {
+  background: #fce8ee;
+  color: #b91c4a;
+  border-color: rgba(185, 28, 74, 0.15);
+}
+
+.cp-pill--cisco-ccna {
+  background: #fff4d6;
+  color: #92400e;
+  border-color: rgba(146, 64, 14, 0.15);
+}
+
+/* ── Footer Cisco ── */
+.cp-cisco-footer {
+  background: #eaf4ff;
+  border-radius: var(--radius-card);
+  border: 1px solid rgba(0, 86, 163, 0.15);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cp-cisco-footer-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+
+.cp-cisco-footer-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #0056a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-cisco-footer-icon .material-symbols-outlined {
+  font-size: 26px;
+  color: #fff;
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.cp-cisco-footer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cp-on-surface);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.cp-cisco-ccna-accent {
+  color: #0056a3;
+  font-weight: 800;
+}
+
+.cp-cisco-footer-sub {
+  font-size: 13px;
+  color: var(--cp-on-muted);
+  line-height: 1.5;
+}
+
+.cp-cisco-footer-logo {
+  flex-shrink: 0;
+}
+
+.cp-cisco-footer-logo img {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .cp-cisco-footer {
+    flex-direction: column;
+  }
+
+  .cp-cisco-footer-logo {
+    display: none;
+  }
+
+  .cp-cisco-illus {
+    width: 160px;
+    height: 120px;
+  }
+}
