@@ -1,8 +1,7 @@
-
 (function () {
   'use strict';
 
-  /* Animaciones de entrada con IntersectionObserver  */
+  /* Animaciones de entrada — threshold 0 para que dispare con el header fijo */
   function initEntrada() {
     var targets = document.querySelectorAll('.ip-header, .ip-card, .ip-stats');
     if (!targets.length) return;
@@ -14,7 +13,7 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0 }); /* 0 = dispara en cuanto 1 pixel es visible */
 
     targets.forEach(function (el) { obs.observe(el); });
   }
@@ -58,7 +57,7 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0 });
 
     obs.observe(el);
   }
@@ -75,9 +74,9 @@
   } else {
     init();
   }
+
+  /* Hamburger */
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  if (menuBtn) menuBtn.addEventListener('click', function () { mainNav.classList.toggle('open'); });
 })();
-
-
-const menuBtn = document.getElementById('menuBtn');
-const mainNav = document.getElementById('mainNav');
-if (menuBtn) menuBtn.addEventListener('click', () => mainNav.classList.toggle('open'));

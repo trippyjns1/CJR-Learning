@@ -13,43 +13,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
 
-    <link rel="stylesheet" href="assets/css/global.css">
-    <link rel="stylesheet" href="assets/css/ing_por.css" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/ing_por.css" />
 </head>
 
 <body>
+
   <header class="site-header">
-        <div class="header-inner">
-
-            <div class="header-logo">
-                <a href="index.html">
-                    <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning">
-                </a>
-            </div>
-
-
-            <nav class="header-nav" id="mainNav">
-                <a href="index.html">Inicio</a>
-                <a href="ing_por.html" class="active">Inglés/Portugués</a>
-                <a href="spss.html">SPSS</a>
-                <a href="computo.html">Cómputo</a>
-                <a href="index.html#contacto" class="nav-btn-contacto">Contacto →</a>
-            </nav>
-
-            <!-- Hamburger -->
-            <button class="hamburger" id="menuBtn" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-        </div>
+    <div class="header-inner">
+      <div class="header-logo">
+        <a href="index.html">
+          <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning">
+        </a>
+      </div>
+      <nav class="header-nav" id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="ing_por.html" class="active">Inglés/Portugués</a>
+        <a href="spss.html">SPSS</a>
+        <a href="computo.html">Cómputo</a>
+        <a href="index.html#contacto" class="nav-btn-contacto">Contacto →</a>
+      </nav>
+      <button class="hamburger" id="menuBtn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
   <section id="ingles" class="ip-section">
     <div class="ip-inner">
 
-      <!--  ENCABEZADO  -->
+      <!-- ── ENCABEZADO ── -->
       <div class="ip-header">
         <div class="ip-badge">
           <span class="material-symbols-outlined" aria-hidden="true">language</span>
@@ -62,10 +55,10 @@
         </p>
       </div>
 
-      <!--  CARD PRINCIPAL  -->
+      <!-- ── CARD PRINCIPAL ── -->
       <div class="ip-card">
 
-        <!-- Columna izquierda -->
+        <!-- Columna izquierda: imagen + descripción + badges -->
         <div class="ip-col ip-col--left">
           <div class="ip-img-wrap">
             <div class="ip-img-circle" aria-hidden="true"></div>
@@ -90,10 +83,14 @@
               <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
               PEARSON
             </div>
+            <div class="ip-platform-badge">
+              <span class="material-symbols-outlined" aria-hidden="true">bar_chart</span>
+              B2 – C1 LEVEL
+            </div>
           </div>
         </div>
 
-        <!-- Columna derecha -->
+        <!-- Columna derecha: lista de servicios + CTA -->
         <div class="ip-col ip-col--right">
           <h3 class="ip-list-title">¿En qué podemos ayudarte?</h3>
           <div class="ip-title-underline" aria-hidden="true"></div>
@@ -171,9 +168,36 @@
           </div>
         </div>
 
+      </div><!-- /ip-card -->
+
+      <!-- ── GALERÍA CARRUSEL ── -->
+      <div class="ip-gallery">
+        <div class="ip-gallery-header">
+          <h3 class="ip-gallery-title">Lo que logramos con nuestros estudiantes</h3>
+          <p class="ip-gallery-sub">Resultados reales en plataformas como ELLS, Pearson y más.</p>
+        </div>
+        <div class="ip-track-wrap">
+          <div class="ip-track">
+            <div class="ip-slide"><img src="assets/images/reseñas/ingles1.png" alt="Resultado inglés 1" /></div>
+            <div class="ip-slide"><img src="assets/images/reseñas/ingles2.png" alt="Resultado inglés 2" /></div>
+            <div class="ip-slide"><img src="assets/images/reseñas/ingles3.png" alt="Resultado inglés 3" /></div>
+            <div class="ip-slide"><img src="assets/images/reseñas/ingles4.png" alt="Resultado inglés 4" /></div>
+            <div class="ip-slide"><img src="assets/images/reseñas/ingles5.png" alt="Resultado inglés 5" /></div>
+            <div class="ip-slide"><img src="assets/images/reseñas/ingles6.png" alt="Resultado inglés 6" /></div>
+            <div class="ip-slide"><img src="assets/images/reseñas/ingles7.png" alt="Resultado inglés 7" /></div>
+            <!-- Duplicadas para loop infinito -->
+            <div class="ip-slide" aria-hidden="true"><img src="assets/images/reseñas/ingles1.png" alt="" /></div>
+            <div class="ip-slide" aria-hidden="true"><img src="assets/images/reseñas/ingles2.png" alt="" /></div>
+            <div class="ip-slide" aria-hidden="true"><img src="assets/images/reseñas/ingles3.png" alt="" /></div>
+            <div class="ip-slide" aria-hidden="true"><img src="assets/images/reseñas/ingles4.png" alt="" /></div>
+            <div class="ip-slide" aria-hidden="true"><img src="assets/images/reseñas/ingles5.png" alt="" /></div>
+            <div class="ip-slide" aria-hidden="true"><img src="assets/images/reseñas/ingles6.png" alt="" /></div>
+            <div class="ip-slide" aria-hidden="true"><img src="assets/images/reseñas/ingles7.png" alt="" /></div>
+          </div>
+        </div>
       </div>
 
-      <!--  STATS  -->
+      <!-- ── STATS ── -->
       <div class="ip-stats">
 
         <div class="ip-stat">
@@ -181,7 +205,7 @@
             <span class="material-symbols-outlined">group</span>
           </div>
           <div class="ip-stat-text">
-            <strong class="ip-stat-number">+5000</strong>
+            <strong class="ip-stat-number">+500</strong>
             <span>Estudiantes atendidos</span>
             <span class="ip-stat-sub">Confianza y resultados comprobados.</span>
           </div>
@@ -207,57 +231,17 @@
           </div>
         </div>
 
-      </div>
+      </div><!-- /ip-stats -->
 
-    </div>
+    </div><!-- /ip-inner -->
   </section>
 
-  <!--  FOOTER  -->
-    <footer>
-        <div class="footer-bar">
-            <div class="footer-bar-inner">
-
-                <!-- Marca -->
-                <div class="footer-brand-col">
-                    <img src="assets/images/logos/CRJ_logo2.png" alt="CJR Learning ">
-                    <span class="footer-brand">CJR Learning</span>
-                    <p class="footer-brand-desc">Apoyo académico profesional para estudiantes de todos los niveles. Rápidos,
-                        organizados y comprometidos.</p>
-                </div>
-
-                <!-- Navegación -->
-                <div class="footer-nav-col">
-                    <h4>Navegación</h4>
-                    <div class="footer-links">
-                        <a href="index.html">Inicio</a>
-                        <a href="ing_por.html">Inglés/Portugués</a>
-                        <a href="spss.html">SPSS</a>
-                        <a href="computo.html">Cómputo</a>
-                    </div>
-                </div>
-
-                <!-- Servicios -->
-                <div class="footer-services-col">
-                    <h4>Servicios</h4>
-                    <div class="footer-links">
-                        <a href="spss.html">Análisis SPSS</a>
-                        <a href="spss.html">Tesis e Investigación</a>
-                        <a href="ing_por.html">Inglés y Portugués</a>
-                        <a href="computo.html">Cómputo Avanzado</a>
-                        <a href="computo.html">Cisco Networking</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <span class="footer-copy">© 2026 <span>CJR Learning</span>. Todos los derechos reservados.</span>
-                <span class="footer-copy">Hecho para estudiantes peruanos</span>
-            </div>
-        </div>
-    </footer>
-
-  <script src="assets/js/ingles-portugues.js" defer></script>
+  <script src="ingles-portugues.js" defer></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if (menuBtn) menuBtn.addEventListener('click', () => mainNav.classList.toggle('open'));
+  </script>
 </body>
 
 </html>
