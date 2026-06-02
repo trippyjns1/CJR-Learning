@@ -621,7 +621,7 @@
 
 /*  CTA  */
 .spss-cta {
-    background: var(--color-tertiary);
+    background: var(--color-white);
 }
 
 .spss-cta-card {
@@ -718,6 +718,98 @@
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
+}
+
+/* Galeria Carrusel */
+.loop-finite {
+    background: var(--color-tertiary);
+}
+.ip-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ip-gallery-header {
+    text-align: center;
+}
+
+.ip-gallery-title {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 700;
+    color: var(--ip-on-surface);
+    margin-bottom: 6px;
+}
+
+.ip-gallery-sub {
+    font-size: 14px;
+    color: var(--ip-on-muted);
+    line-height: 1.5;
+}
+
+.ip-track-wrap {
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    padding: 8px 0 16px;
+}
+
+.ip-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: ipScrollLoop 55s linear infinite;
+}
+
+.ip-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes ipScrollLoop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.ip-slide {
+    flex-shrink: 0;
+    width: 680px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--ip-border);
+    box-shadow: var(--ip-shadow);
+    background: var(--ip-card-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ip-slide:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(53, 37, 205, 0.15);
+}
+
+.ip-slide img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.ip-gallery-header h3 {
+    font-size: 34px;
+}
+
+@media (max-width: 600px) {
+    .ip-slide {
+        width: 320px;
+    }
+
+    .ip-slide img {
+        height: 210px;
+    }
 }
 
 /*  RESPONSIVE  */

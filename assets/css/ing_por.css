@@ -1,7 +1,4 @@
-/* ============================================================
-   CJR Learning — Sección Inglés / Portugués
-   ing_por.css
-   ============================================================ */
+
 
 /* === TOKENS === */
 :root {
@@ -493,9 +490,7 @@ body {
   animation: fadeUp 0.55s ease 0.30s both;
 }
 
-/* ══════════════════════════════
-   GALERÍA CARRUSEL
-══════════════════════════════ */
+/* Galeria Carrusel */
 .ip-gallery {
   display: flex;
   flex-direction: column;
